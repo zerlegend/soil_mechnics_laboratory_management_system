@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Mechanics Laboratory - Create Project</title>
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+    <h1>Create New Project</h1>
+    <hr>
+    <form action="{{ url_for('create_projects') }}" method="POST">
+        <div class="form-group">
+            <label for="name">Project Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" name="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="start_date">Start Date:</label>
+            <input type="date" class="form-control" id="start_date" name="start_date" required>
+        </div>
+        <div class="form-group">
+            <label for="end_date">End Date:</label>
+            <input type="date" class="form-control" id="end_date" name="end_date">
+        </div>
+        <div class="form-group">
+            <label for="budget">Budget:</label>
+            <input type="number" class="form-control" id="budget" name="budget" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Project</button>
+    </form>
+    <hr>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Projects</a>
+
+    <!-- Add Bootstrap JS and Popper.js links (order matters) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

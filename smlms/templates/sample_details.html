@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Mechanics Laboratory - Sample Details</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+
+    <h1>Sample Details</h1>
+    <hr>
+    
+    <h2>Sample Information</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>Name:</th>
+            <td>{{ sample.name }}</td>
+        </tr>
+        <tr>
+            <th>Type:</th>
+            <td>{{ sample.type }}</td>
+        </tr>
+        <tr>
+            <th>Weight:</th>
+            <td>{{ sample.weight }}</td>
+        </tr>
+        <tr>
+            <th>Location:</th>
+            <td>{{ sample.location }}</td>
+        </tr>
+        <tr>
+            <th>Date Sampled:</th>
+            <td>{{ sample.date_sampled }}</td>
+        </tr>
+        <tr>
+            <th>Sampled By:</th>
+            <td>{{ sample.sampled_by }}</td>
+        </tr>
+    </table>
+    <hr>
+    
+    
+    <a href="{{ url_for('create_sample', sample_id=sample.id) }}" class="btn btn-success">Create new sample</a>
+    <br>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Samples</a>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

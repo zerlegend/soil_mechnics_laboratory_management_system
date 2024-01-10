@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Mechanics Laboratory - Create Sample</title>
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+    <h1>Create New Sample</h1>
+    <hr>
+    <form action="{{ url_for('create_samples') }}" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <input type="text" class="form-control" id="type" name="type" required>
+        </div>
+        <div class="form-group">
+            <label for="weight">Weight:</label>
+            <input type="number" class="form-control" id="weight" name="weight" required>
+        </div>     
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" required>
+        </div>     
+        <div class="form-group">
+            <label for="date_sampled">Date Sampled:</label>
+            <input type="date" class="form-control" id="date_sampled" name="date_sampled" required>
+        </div>
+        <div class="form-group">
+            <label for="sampled_by">Sampled By:</label>
+            <input type="text" class="form-control" id="sampled_by" name="sampled_by" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Sample</button>
+    </form>
+    <hr>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Samples</a>
+
+    <!-- Add Bootstrap JS and Popper.js links (order matters) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

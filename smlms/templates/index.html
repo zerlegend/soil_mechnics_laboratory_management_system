@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <title>Soil Mechanics Laboratory Management System</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">ZAYU</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#about">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#services">Services</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link " href="#contact">Contact Us</a>
+                  </li>
+              </ul>
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('register')}}">Register</a>
+                </li>
+            </ul>
+          </div>
+      </div>
+  </nav>
+  
+      <!-- carousel -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../static/img/1.jpg" class="d-block w-100" class="img-fluid img-thumbnail" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/4.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+
+      <div class="container">
+        <h1 class="text-center p-3 mb-3 mt-3">Soil Mechanics Laboratory</h1>
+        <div class="w-100 bg-light p-5 mb-3">
+          <p>Soil Mechanics is of utmost importance, moreover since it the basis of foundation and super structure designs. That’s where our well equipped Soil Mechanics Lab solves the requirements. Our Soil mechanics laboratory is ISO 9001:2015 accredited and is certified by NABL. </p>
+          <p>Based in Debre Berhan, our computerized Soil Mechanics laboratory is operated by able and well experienced engineers and technicians who arrive at legitimate conclusions via lab tests on soil, rock and water. </p>
+          <button type="button" class="btn btn-primary btn-lg">Book Your Laboratory Tests</button>
+        </div>
+
+        <h2 id="about" class="fs-1 p-3 mt-2 mb-2 text-center">About Us</h2>
+
+        
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h1 class="fs-4">Our Mission</h1>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Geotechnical Test Equipment is manufactured to the best standard and quality components, which meets our customer needs to all international standards, (EN, ASTM, AASHTO, BS, AFNOR, DIN, UNE, UNI, ISO). Moreover we have the facility to custom design and produce any equipment to any specification and standard required.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h1 class="fs-4">Our Vision</h1>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>With our strong focus and goal of the future, our company strives to achieve many breakthroughs, establishing greater platforms for continued constant growth by staying true to our values and commitment to serve our customers with the best material testing equipment that meets the latest standards, quality and technology.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <h1 class="fs-4">Our History</h1>
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Geotechnical Test Equipment is founded to be one of the worlds leading manufacturer of material testing equipment. We established operation worldwide in more than 190 countries. Represented either by a network of local partners, resellers and distributers or directly though our regional sales offices.</p>
+                  <p>Geotechnical Test Equipment has been operating for more than 15 years, in designs, manufacturing and sale of civil engineering and material testing equipment, tools and components. Offering best solutions for on site and laboratory tests for concrete, cement, mortar, bitumen, asphalt, soil, aggregates, rocks and steel. Geotechnical Test Equipment is manufactured in the United Kingdom and Europe. With its commercial head office located in England, UK and other regional offices located in different cotenants around the world to better serve its customers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="row mt-2">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title fs-4">Our Motto</h5>
+                <p class="card-text">We are truly “THE BEST IN TEST”, this motto marks our exceptional spirit crafted to keep our company vision and mission statement.</p>
+                <a href="#" class="btn btn-primary">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title fs-4">Our Customers</h5>
+                <p class="card-text">Our broad customer base consists of both the construction industry and the educational sector. The main users of our equipment are:</p>
+                <ul>
+                    <li>Educational institutes (Universities and colleges)</li>
+                    <li>Quality control and Geotechnical Laboratories</li>
+                    <li>Road contractors</li>
+                    <li>Asphalt manufacturers</li>
+                    <li>Cement and concrete produces</li>
+                    <li>Ready mix, precast, premix, building materials</li>
+                    <li>Construction companies</li>
+                    <li>Civil engineering consultants, engineers and resellers</li>
+                    <li>Government authorities and Ministries, Public works</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title fs-4">Our Achivements</h5>
+                <p class="card-text">Our equipment has already been sold to hundred of customers around the world. We have already furbished more than 40 universities and colleges, supplied more than 300 private laboratories, 200 raw material producers, 250 contractors and consulting companies, with Material testing equipment and accessories that are used in educating and testing to the highest levels and standards.</p>
+                <a href="#" class="btn btn-primary">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+      <h2 id="services" class="fs-1 p-3 mt-3 mb-3 text-center">Services</h2>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="bg-secondary text-white p-3 mt-3 mb-3">
+            <h2>Rates</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio iste magnam repudiandae inventore officiis architecto amet nam perferendis itaque numquam consequuntur harum esse possimus eius porro, maxime sint tempora? Sequi minima, expedita commodi nulla eaque accusamus odit corrupti laboriosam, dicta maxime aut ea ad, atque non facere eius quas harum.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="bg-secondary text-white p-3 mt-3 mb-3">
+            <h2>Fees</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio iste magnam repudiandae inventore officiis architecto amet nam perferendis itaque numquam consequuntur harum esse possimus eius porro, maxime sint tempora? Sequi minima, expedita commodi nulla eaque accusamus odit corrupti laboriosam, dicta maxime aut ea ad, atque non facere eius quas harum.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="bg-secondary text-white p-3 mt-3 mb-3">
+            <h2>Popular Sites</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio iste magnam repudiandae inventore officiis architecto amet nam perferendis itaque numquam consequuntur harum esse possimus eius porro, maxime sint tempora? Sequi minima, expedita commodi nulla eaque accusamus odit corrupti laboriosam, dicta maxime aut ea ad, atque non facere eius quas harum.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="bg-secondary text-white p-3 mt-3 mb-3">
+            <h2>Features</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio iste magnam repudiandae inventore officiis architecto amet nam perferendis itaque numquam consequuntur harum esse possimus eius porro, maxime sint tempora? Sequi minima, expedita commodi nulla eaque accusamus odit corrupti laboriosam, dicta maxime aut ea ad, atque non facere eius quas harum.</p>
+          </div>
+        </div>
+    </div>
+
+      <h2 id="contact" class="fs-1 mt-3 mb-3 text-center">Contact Us</h2>
+      <p class="text-dark text-center">For More Information Contact Us</p>
+      <div class="w-100 bg-light p-5 mb-5">
+        <form class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="validFirstName">First Name</label>
+              <input type="text" id="validFirstName" class="form-control is-valid" placeholder="zee">
+              <div class="valid-feedback">Looks good!</div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="validLastName">Last Name </label>
+              <input type="text" id="validLastName" class="form-control is-valid" placeholder="gee">
+              <div class="valid-feedback">Looks good!</div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="validEmail">Email Address </label>
+              <input type="text" id="validEmail" class="form-control is-invalid">
+              <small class="form-text text-muted">Email address must be entered!</small>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="validAddress">Address </label>
+              <input type="text" id="validAddress" class="form-control is-invalid">
+              <div class="invalid-feedback">Looks bad! Address must be entered.</div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="validCity">City </label>
+              <input type="text" id="validCity" class="form-control">
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="validState">State </label>
+
+              <select id="validState" class="form-control">
+                  <option value="">State Name 1</option>
+                  <option value="" selected>State Name 2 (auto selected)</option>
+                  <option value="">State Name 3</option>
+                  <option value="">State Name 4</option>
+                  <option value="">State Name 5</option>
+              </select>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <label for="validEmail">Zip </label>
+              <input type="text" id="validEmail" class="form-control">
+          </div>
+
+          <div class="col-lg-8 col-md-6 col-sm-12 mb-2">
+              <label for="validText">Type your comment... </label>
+              <textarea class="form-control" id="validText" rows="8"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block"><a href="mailto: abc@def.com" class="text-white text-decoration-none">Submit</a></button>
+      </form>
+      </div>
+
+      <h2 id="destinations" class="fs-1 mt-3 mb-3 text-center">Rely Your Trust On Us</h2>
+      <img src="../static/img/5.jpg" alt="" class="w-100">
+
+      <h2 id="contact" class="fs-1 mt-3 mb-3 text-center">Our Location</h2>
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14849.779129013508!2d39.510003109967805!3d9.664108124915058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1649bd7dac123767%3A0x44635ad4b8545f85!2sDebre%20Berhan%20University!5e0!3m2!1sen!2set!4v1701865776171!5m2!1sen!2set" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      
+
+    </div>
+
+    <!-- footer  -->
+    <footer class="footer mt-5 py-3 bg-dark">
+      <div class="container">
+          <span class="text-muted">
+              Copyright &copy; 2023 All rights reserved | zayu Engineering
+          </span>
+      </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
