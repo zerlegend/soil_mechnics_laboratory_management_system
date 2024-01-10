@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, session, url_for
 from smlms import app, mysql
 from flask_bcrypt import Bcrypt
 import MySQLdb.cursors, re
-from smlms.models import create_equipment, create_project, create_sample, create_user, delete_equipment, delete_project_by_id, delete_sample, get_all_equipment, get_all_projects, get_all_samples, get_all_users, get_equipment_by_id, get_project_by_id, get_sample_by_id, get_user_by_email, update_equipment, update_project_by_id, update_sample
+from smlms.models import create_equipment, create_project, create_sample, create_test, create_user, delete_equipment, delete_project_by_id, delete_sample, delete_test, get_all_equipment, get_all_projects, get_all_samples, get_all_tests, get_all_users, get_equipment_by_id, get_project_by_id, get_sample_by_id, get_test_by_id, get_user_by_email, update_equipment, update_project_by_id, update_sample, update_test
 
 bcrypt = Bcrypt(app)
 
@@ -147,7 +147,6 @@ def delete_project(project_id):
 
 
 
-
 # Route for handling CRUD operations on Equipment
 @app.route('/equipment')
 def equipment():
@@ -196,7 +195,6 @@ def delete_equipments(equipment_id):
         # Handle the error as needed, e.g., return an error response
     # Redirect to the equipment page after deletion
     return redirect(url_for('equipment'))
-
 
 
 
@@ -264,6 +262,7 @@ def delete_samples(sample_id):
 
 
 
+# Route for handling CRUD operations on tests
 @app.route('/tests')
 def tests():
     # Get all tests
@@ -277,15 +276,15 @@ def test_details(test_id):
     return render_template('test_details.html', test=test)
 
 @app.route('/create_test', methods=['GET', 'POST'])
-def create_test():
+def create_tests():
     if request.method == 'POST':
-        sample_id = request.form.get('sample_id')
+        name = request.form.get('name')
         type = request.form.get('type')
         standard = request.form.get('standard')
         date_tested = request.form.get('date_tested')
         results = request.form.get('results')
-        observations = request.form.get('observations')
-        create_test(sample_id, type, standard, date_tested, results, observations)
+        tested_by = request.form.get('tested_by')
+        create_test(name, type, standard, date_tested, results, tested_by)
         return redirect(url_for('tests'))
     else:
         # (Optional) Populate sample list dynamically
@@ -299,14 +298,24 @@ def edit_test(test_id):
     # (Optional) Populate sample list dynamically
     samples = get_all_samples()
     if request.method == 'POST':
-        sample_id = request.form.get('sample_id')
+        name = request.form.get('name')
         type = request.form.get('type')
         standard = request.form.get('standard')
         date_tested = request.form.get('date_tested')
         results = request.form.get('results')
-        observations = request.form.get('observations')
-        update_test(test_id, sample_id, type, standard, date_tested, results, observations)
+        tested_by = request.form.get('tested_by')
+        update_test(test_id, name, type, standard, date_tested, results, tested_by)
         return redirect(url_for('tests'))
     else:
         return render_template('edit_test.html', test=test, samples=samples)
 
+@app.route('/delete_test/<int:test_id>', methods=['POST'])
+def delete_tests(test_id):
+    try:
+        # Assuming you have a function to delete the sample by ID
+        delete_test(test_id)
+    except Exception as e:
+        print(f"Error in delete_test: {e}")
+        # Handle the error as needed, e.g., return an error response
+    # Redirect to the sample page after deletion
+    return redirect(url_for('tests'))

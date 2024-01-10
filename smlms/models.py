@@ -201,7 +201,7 @@ def delete_equipment(id):
 
 
 
-# Sample Model
+# Samples Model
 class Sample:
     def __init__(self, id, name, type, weight, location, date_sampled, sampled_by, created_at, updated_at):
         self.id = id
@@ -266,17 +266,18 @@ def delete_sample(id):
 
 
 
-
-
+# Tests Model
 class Test:
-    def __init__(self, id, sample_id, type, standard, date_tested, results, observations):
+    def __init__(self, id, name, type, standard, date_tested, results, tested_by, created_at, updated_at):
         self.id = id
-        self.sample_id = sample_id
+        self.name = name
         self.type = type
         self.standard = standard
         self.date_tested = date_tested
         self.results = results
-        self.observations = observations
+        self.tested_by = tested_by
+        self.created_at = created_at
+        self.updated_at = updated_at
 
 def get_all_tests():
     try:
@@ -299,20 +300,20 @@ def get_test_by_id(id):
         print(f"Error in get_test_by_id: {e}")
         return None
 
-def create_test(sample_id, type, standard, date_tested, results, observations):
+def create_test(name, type, standard, date_tested, results, tested_by):
     try:
         with mysql.connection.cursor() as cursor:
-            cursor.execute("INSERT INTO tests (sample_id, type, standard, date_tested, results, observations) VALUES (%s, %s, %s, %s, %s, %s)",
-                           (sample_id, type, standard, date_tested, results, observations))
+            cursor.execute("INSERT INTO tests (name, type, standard, date_tested, results, tested_by) VALUES (%s, %s, %s, %s, %s, %s)",
+                           (name, type, standard, date_tested, results, tested_by))
         mysql.connection.commit()
     except Exception as e:
         print(f"Error in create_test: {e}")
 
-def update_test(id, sample_id, type, standard, date_tested, results, observations):
+def update_test(id, name, type, standard, date_tested, results, tested_by):
     try:
         with mysql.connection.cursor() as cursor:
-            cursor.execute("UPDATE tests SET sample_id = %s, type = %s, standard = %s, date_tested = %s, results = %s, observations = %s WHERE id = %s",
-                           (sample_id, type, standard, date_tested, results, observations, id))
+            cursor.execute("UPDATE tests SET name = %s, type = %s, standard = %s, date_tested = %s, results = %s, tested_by = %s WHERE id = %s",
+                           (name, type, standard, date_tested, results, tested_by, id))
         mysql.connection.commit()
     except Exception as e:
         print(f"Error in update_test: {e}")
