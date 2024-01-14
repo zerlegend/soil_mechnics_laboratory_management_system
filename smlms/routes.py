@@ -73,11 +73,6 @@ def profile():
         return render_template('viewprofile.html')
     return redirect(url_for('login')) 
 
-@app.route('/users')
-def Index():
-    users = get_all_users()
-    return render_template('users.html', users=users)
-
 
 
 

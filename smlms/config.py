@@ -1,12 +1,3 @@
-class Config:
-    MYSQL_HOST = 'localhost'
-    MYSQL_USER = 'root'
-    MYSQL_PASSWORD = 'root'  
-    MYSQL_DB = 'soil_mechanics_lab'
-
-
-
-'''
 import os
 
 class Config:
@@ -15,4 +6,3 @@ class Config:
     MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD', 'root')
     MYSQL_DB = os.environ.get('MYSQL_DB', 'soil_mechanics_lab')
 
-'''

@@ -45,86 +45,39 @@
     </nav>
 
 
-    <div class="container">      
-        <div class="wrapper">
-            <div class="sidebar" data-background-color="black" data-active-color="danger">
-                <div class="sidebar-wrapper" id="sideLinks">
-                    <div class="logo">
-                        <a href="{{ url_for('dashboard') }}" class="simple-text">
-                            Soil Mechanics Laboratory Management System
-                        </a>
-                    </div>
-                    <ul class="nav">
-                        <li id="dashboard">
-                            <a href="{{ url_for('dashboard') }}" class="menu-link">
-                                <i class="ti-dashboard"></i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
-                        <li id="equipment">
-                            <a href="{{ url_for('equipment') }}" class="menu-link">
-                                <i class="ti-user"></i>
-                                <p>Equipment</p>
-                            </a>
-                        </li>
-                        <li id="projects">
-                            <a href="{{ url_for('projects') }}" class="menu-link">
-                                <i class="ti-crown"></i>
-                                <p>Projects</p>
-                            </a>
-                        </li>
-                        <li id="samples">
-                            <a href="{{ url_for('samples') }}" class="menu-link">
-                                <i class="ti-crown"></i>
-                                <p>Samples</p>
-                            </a>
-                        </li>                      
-                        <li id="tests">
-                            <a href="{{ url_for('tests') }}" class="menu-link">
-                                <i class="ti-home"></i>
-                                <p>Tests</p>
-                            </a>
-                        </li> 				
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="main-panel">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Soil Mechanics Laboratory Management System</a>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-user"></i>
-                                    <p class="notification"></p>
-                                    <p><strong><?php //echo $_SESSION["admin"]; ?></strong></p>
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"><i class="fa fa-user"></i> <strong>Profile</strong></a></li>
-                                    <li><a href="#"><i class="fa fa-cog"></i> <strong>Settings</strong></a></li>
-                                    <li><a href="{{ url_for('logout') }}"><i class="fa fa-power-off"></i> <strong>Logout</strong></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-           
+    <div class="container">                         
         <div class="content">
             <div class="container-fluid">    			
-                <div class="alert alert-success fade in">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong><span class="ti ti-announcement fa-2x"></span></strong> <strong>&nbsp;&nbsp;Welcome to your Admin Dashboard!!</strong>.
+                <div class="mt-4 mb-5 text-center">
+                    <h1>Welcome to your Dashboard!!</h1>
                 </div>						
                 <div class="row"><!--row begins-->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                            <i class="ti-harddrives"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p><strong>Equipment</strong></p>									   
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('equipment') }}">
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="ti-arrow-right"></i>View
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>	
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="content">
@@ -162,7 +115,7 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p><strong>Samples</strong></p>									   
+                                            <p ><strong>Samples</strong></p>									   
                                         </div>
                                     </div>
                                 </div>
@@ -203,35 +156,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!--row ends-->
-                <!--row begins-->
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                            <i class="ti-harddrives"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p><strong>Equipment</strong></p>									   
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="{{ url_for('equipment') }}">
-                                    <div class="footer">
-                                        <hr />
-                                        <div class="stats">
-                                            <i class="ti-arrow-right"></i>View
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>				
+                    			
                 </div>		
             </div>	
         </div>
