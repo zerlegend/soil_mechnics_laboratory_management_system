@@ -24,7 +24,7 @@ def login():
             session['email'] = user.email
             session['role'] = user.role
             message = 'Logged in successfully!'
-            return render_template('profile.html', message=message)
+            return render_template('dashboard.html', message=message)
         else:
             message = 'Please enter correct email / password !'
     return render_template('login.html', message = message)
