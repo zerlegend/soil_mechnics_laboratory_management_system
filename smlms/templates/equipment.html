@@ -7,12 +7,12 @@
     <!-- Add Bootstrap CSS link -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="container">
     <h1 class="mt-4">Soil Mechanics Laboratory - Equipment</h1>
     <hr>
     <a href="{{ url_for('create_equipments') }}" class="btn btn-primary mb-2">Create new Equipment</a>
     <hr>
-    <table border="1">
+    <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -40,7 +40,7 @@
         </tbody>
     </table>
 
-
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary mt-3">Back to dashboard</a>
     
     <!-- Add this modal code at the end of the body section -->
 <div class="modal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
