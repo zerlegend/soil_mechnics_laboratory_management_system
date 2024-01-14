@@ -1,1 +1,1 @@
-this is Webstack - Portfolio Project is a web based soil mechanics laboratory management system.
+This is Webstack - Portfolio Project the development part and it is a web based soil mechanics laboratory management system.
