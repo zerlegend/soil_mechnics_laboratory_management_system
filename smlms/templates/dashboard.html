@@ -49,7 +49,7 @@
         <div class="content">
             <div class="container-fluid">    			
                 <div class="mt-4 mb-5 text-center">
-                    <h1 style="font-weight: bold;">Welcome to your Dashboard!!</h1>
+                    <h1 style="font-weight: bold; color: blueviolet;"> {{session.name}} - Welcome to your Dashboard!!</h1>
                 </div>						
                 <div class="row"><!--row begins-->
                     <div class="col-lg-3 col-sm-6 mt-4 mb-3">
@@ -57,7 +57,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="font-weight: bold;">Equipment</h5>
                                 <p class="card-text">Create, edit, and manage soil testing equipment.</p>
-                                <a href="{{ url_for('equipment') }}" class="btn btn-primary">View</a>
+                                <a href="{{ url_for('equipment') }}" class="btn btn-secondary">View</a>
                             </div>
                         </div>
                     </div>	
@@ -66,7 +66,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="font-weight: bold;">Projects</h5>
                                 <p class="card-text">Create, edit, and manage soil testing projects.</p>
-                                <a href="{{ url_for('projects') }}" class="btn btn-primary">View</a>
+                                <a href="{{ url_for('projects') }}" class="btn btn-secondary">View</a>
                             </div>
                         </div>
                     </div>				
@@ -75,7 +75,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="font-weight: bold;">Samples</h5>
                                 <p class="card-text">Create, edit, and manage soil testing samples.</p>
-                                <a href="{{ url_for('samples') }}" class="btn btn-primary">View</a>
+                                <a href="{{ url_for('samples') }}" class="btn btn-secondary">View</a>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="font-weight: bold;">Tests</h5>
                                 <p class="card-text">Create, edit, and manage soil testing.</p>
-                                <a href="{{ url_for('tests') }}" class="btn btn-primary">View</a>
+                                <a href="{{ url_for('tests') }}" class="btn btn-secondary">View</a>
                             </div>
                         </div>
                     </div>		
