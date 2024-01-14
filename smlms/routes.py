@@ -66,15 +66,12 @@ def dashboard():
         return render_template("dashboard.html")
     return redirect(url_for('login'))   
 
-@app.route('/profile', methods=['GET', 'POST'])
+@app.route('/viewprofile', methods=['GET', 'POST'])
 def profile():
-    user = get_user_by_id(session['user_id'])
-    if request.method == 'POST':
-        name = request.form.get('name')
-        email = request.form.get('email')
-        update_user_profile(user.id, name, email)
-        user = get_user_by_id(session['user_id'])
-    return render_template('profile.html', user=user)
+    user  = get_user_by_email(session['email'])
+    if 'loggedin' in session:        
+        return render_template('viewprofile.html')
+    return redirect(url_for('login')) 
 
 @app.route('/users')
 def Index():

@@ -12,7 +12,7 @@
     <title>Soil Mechanics Laboratory Management System</title>
   </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,16 +22,16 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Search Posts</a>
+                        <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ session.email }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url_for('profile', pro_zid=zid) }}">View Profile</a>
+                            <a class="dropdown-item" href="{{ url_for('profile') }}">View Profile</a>
                             <a class="dropdown-item" href="#">Edit Profile</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
@@ -42,22 +42,168 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="profile-sidebar">
-                    <img src="../static/img/default.jpg" class="rounded-circle profile-img" alt="Profile Picture">
-                    <h2>{{ session.name }}</h2>
-                    <p class="profile-bio">{{  'Write your bio here!' }}</p>
-                    <div class="profile-actions">
-                        <a href="{{ url_for('profile') }}" class="btn btn-primary">Edit Profile</a>
+
+    <div class="container">      
+        <div class="wrapper">
+            <div class="sidebar" data-background-color="black" data-active-color="danger">
+                <div class="sidebar-wrapper" id="sideLinks">
+                    <div class="logo">
+                        <a href="{{ url_for('dashboard') }}" class="simple-text">
+                            Soil Mechanics Laboratory Management System
+                        </a>
                     </div>
+                    <ul class="nav">
+                        <li id="dashboard">
+                            <a href="{{ url_for('dashboard') }}" class="menu-link">
+                                <i class="ti-dashboard"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li id="equipment">
+                            <a href="{{ url_for('equipment') }}" class="menu-link">
+                                <i class="ti-user"></i>
+                                <p>Equipment</p>
+                            </a>
+                        </li>
+                        <li id="projects">
+                            <a href="{{ url_for('projects') }}" class="menu-link">
+                                <i class="ti-crown"></i>
+                                <p>Projects</p>
+                            </a>
+                        </li>
+                        <li id="samples">
+                            <a href="{{ url_for('samples') }}" class="menu-link">
+                                <i class="ti-crown"></i>
+                                <p>Samples</p>
+                            </a>
+                        </li>                      
+                        <li id="tests">
+                            <a href="{{ url_for('tests') }}" class="menu-link">
+                                <i class="ti-home"></i>
+                                <p>Tests</p>
+                            </a>
+                        </li> 				
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="profile-content">
-                </div>
-            </div>
+        </div>
+           
+        <div class="content">
+            <div class="container-fluid">    			
+                <div class="alert alert-success fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong><span class="ti ti-announcement fa-2x"></span></strong> <strong>&nbsp;&nbsp;Welcome to your Admin Dashboard!!</strong>.
+                </div>						
+                <div class="row"><!--row begins-->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                            <i class="ti-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p><strong>Projects</strong></p>										
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('projects') }}">
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="ti-arrow-right"></i>View
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>				
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-info text-center">
+                                            <i class="ti-id-badge"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p><strong>Samples</strong></p>									   
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('samples') }}">
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="ti-arrow-right"></i>View
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                            <i class="ti-crown"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p><strong>Tests</strong></p>										
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('tests') }}">
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="ti-arrow-right"></i>View
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--row ends-->
+                <!--row begins-->
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                            <i class="ti-harddrives"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p><strong>Equipment</strong></p>									   
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('equipment') }}">
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="ti-arrow-right"></i>View
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>				
+                </div>		
+            </div>	
         </div>
     </div>
 

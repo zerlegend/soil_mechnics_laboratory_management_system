@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Soil Mechanics Laboratory Management System</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/dashboard.css') }}">
+
+
+	<!-- Animation library for notifications   -->
+	<link href="{{ url_for('static',filename='css/animate.min.css') }}" rel="stylesheet" />
+	<!--  Paper Dashboard core CSS    -->
+	<link href="{{ url_for('static',filename='css/paper-dashboard.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static',filename='css/demo.css') }}" rel="stylesheet" />
+	<!--  Fonts and icons     -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static',filename='css/themify-icons.css') }}" rel="stylesheet">
+	<script src="{{ url_for('static',filename='js/common.js') }}"></script>
+
+
+	<link rel="icon" type="image/png" href="https://webdamn.com/wp-content/themes/v2/webdamn.png">
+</head>
+
+<body>
+	<div class="container" style="min-height:500px;">
+		<div class="wrapper">
+			<div class="sidebar" data-background-color="black" data-active-color="danger">
+				<div class="sidebar-wrapper" id="sideLinks">
+					<div class="logo">
+						<a href="{{ url_for('dashboard') }}" class="simple-text">
+							Soil Mechanics Laboratory Management
+						</a>
+					</div>
+					<ul class="nav">
+						<li class="" id="dashboard">
+							<a href="{{ url_for('dashboard') }}" class="menu-link">
+								<i class="ti-dashboard"></i>
+								<p>Dashboard</p>
+							</a>
+						</li>
+						<li id="students">
+							<a href="{{ url_for('student') }}" class="menu-link">
+								<i class="ti-user"></i>
+								<p>Student</p>
+							</a>
+						</li>
+						<li id="classes">
+							<a href="{{ url_for('classes') }}" class="menu-link">
+								<i class="ti-crown"></i>
+								<p>Classes</p>
+							</a>
+						</li>
+						<li id="sections">
+							<a href="{{ url_for('sections') }}" class="menu-link">
+								<i class="ti-crown"></i>
+								<p>Sections</p>
+							</a>
+						</li>
+						<li id="teacher">
+							<a href="{{ url_for('teacher') }}" class="menu-link">
+								<i class="ti-home"></i>
+								<p>Teacher</p>
+							</a>
+						</li>
+						<li id="subjects">
+							<a href="{{ url_for('subject') }}" class="menu-link">
+								<i class="ti-home"></i>
+								<p>Subjects</p>
+							</a>
+						</li>
+						<li id="attendance">
+							<a href="{{ url_for('attendance') }}" class="menu-link">
+								<i class="ti-bar-chart-alt"></i>
+								<p>Attendance</p>
+							</a>
+						</li>
+						<li id="attendance_report">
+							<a href="{{ url_for('report') }}" class="menu-link">
+								<i class="ti-bar-chart-alt"></i>
+								<p>Attendance Report</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main-panel">
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row"><!--row begins-->
+						<div class="col-lg-3 col-sm-6">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-5">
+											<div class="icon-big icon-warning text-center">
+												<i class="ti-user"></i>
+											</div>
+										</div>
+										<div class="col-xs-7">
+											<div class="numbers">
+												<p><strong>Students</strong></p>
+											</div>
+										</div>
+									</div>
+									<a href="{{ url_for('student') }}">
+										<div class="footer">
+											<hr />
+											<div class="stats">
+												<i class="ti-arrow-right"></i>View
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-5">
+											<div class="icon-big icon-info text-center">
+												<i class="ti-id-badge"></i>
+											</div>
+										</div>
+										<div class="col-xs-7">
+											<div class="numbers">
+												<p><strong>Teachers</strong></p>
+											</div>
+										</div>
+									</div>
+									<a href="{{ url_for('teacher') }}">
+										<div class="footer">
+											<hr />
+											<div class="stats">
+												<i class="ti-arrow-right"></i>View
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-5">
+											<div class="icon-big icon-success text-center">
+												<i class="ti-crown"></i>
+											</div>
+										</div>
+										<div class="col-xs-7">
+											<div class="numbers">
+												<p><strong>Classes</strong></p>
+											</div>
+										</div>
+									</div>
+									<a href="{{ url_for('classes') }}">
+										<div class="footer">
+											<hr />
+											<div class="stats">
+												<i class="ti-arrow-right"></i>View
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div><!--row ends-->
+					<!--row begins-->
+					<div class="row">
+						<div class="col-lg-3 col-sm-6">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-5">
+											<div class="icon-big icon-warning text-center">
+												<i class="ti-harddrives"></i>
+											</div>
+										</div>
+										<div class="col-xs-7">
+											<div class="numbers">
+												<p><strong>Subjects</strong></p>
+											</div>
+										</div>
+									</div>
+									<a href="{{ url_for('subject') }}">
+										<div class="footer">
+											<hr />
+											<div class="stats">
+												<i class="ti-arrow-right"></i>View
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-5">
+											<div class="icon-big icon-success text-center">
+												<i class="ti-crown"></i>
+											</div>
+										</div>
+										<div class="col-xs-7">
+											<div class="numbers">
+												<p><strong>Sections</strong></p>
+											</div>
+										</div>
+									</div>
+									<a href="{{ url_for('sections') }}">
+										<div class="footer">
+											<hr />
+											<div class="stats">
+												<i class="ti-arrow-right"></i>View
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6">
+							<div class="card">
+								<div class="content">
+									<div class="row">
+										<div class="col-xs-5">
+											<div class="icon-big icon-danger text-center">
+												<i class="ti-blackboard"></i>
+											</div>
+										</div>
+										<div class="col-xs-7">
+											<div class="numbers">
+												<p><strong>Attendance</strong></p>
+											</div>
+										</div>
+									</div>
+									<a href="{{ url_for('attendance') }}">
+										<div class="footer">
+											<hr />
+											<div class="stats">
+												<i class="ti-arrow-right"></i>View
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
