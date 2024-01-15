@@ -47,35 +47,6 @@ def get_all_users():
         print(f"Error in get_all_users: {e}")
         return None
 
-# def get_user_by_id(id):
-#     try:
-#         with mysql.connection.cursor() as cursor:
-#             cursor.execute("SELECT * FROM users WHERE id = %s", (id,))
-#             user_data = cursor.fetchone()
-#         return User(*user_data) if user_data else None
-#     except Exception as e:
-#         print(f"Error in get_user_by_id: {e}")
-#         return None
-
-# def update_user_profile(id, name, email, active):
-#     try:
-#         with mysql.connection.cursor() as cursor:
-#             cursor.execute("UPDATE users SET name = %s, email = %s, active = %s WHERE id = %s",
-#                            (name, email, active, id))
-#         mysql.connection.commit()
-#     except Exception as e:
-#         print(f"Error in update_user_profile: {e}")
-
-# def delete_user(id):
-#     try:
-#         with mysql.connection.cursor() as cursor:
-#             cursor.execute("DELETE FROM users WHERE id = %s", (id,))
-#         mysql.connection.commit()
-#     except Exception as e:
-#         print(f"Error in delete_user: {e}")
-
-
-
 
 # Project Model
 class Project:
@@ -199,8 +170,6 @@ def delete_equipment(id):
         print(f"Error in delete_equipment: {e}")
 
 
-
-
 # Samples Model
 class Sample:
     def __init__(self, id, name, type, weight, location, date_sampled, sampled_by, created_at, updated_at):
@@ -261,8 +230,6 @@ def delete_sample(id):
         mysql.connection.commit()
     except Exception as e:
         print(f"Error in delete_sample: {e}")
-
-
 
 
 
