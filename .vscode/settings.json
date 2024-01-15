@@ -2,6 +2,7 @@
     "cSpell.words": [
         "gunicorn",
         "mysqldb",
+        "ngrok",
         "werkzeug"
     ]
 }
