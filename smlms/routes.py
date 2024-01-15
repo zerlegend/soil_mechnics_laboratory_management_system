@@ -134,11 +134,6 @@ def delete_project(project_id):
     return redirect(url_for('projects'))
 
 
-
-
-
-
-
 # Route for handling CRUD operations on Equipment
 @app.route('/equipment')
 def equipment():
